@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="loginForm bg-light mt-4">
+<form class = "loginpage" #userlogin="ngForm" (ngSubmit)="onSubmit(userlogin)" >
+
+    <h2 class="mb-4 mt-2">Admin Login</h2>  
+        <div class="form-group row">
+                <div class="col-sm-12">
+                        <input type="text" name="username" class = "form-control" ngModel placeholder="Please Enter User Name" >
+                </div>
+        </div>
+        <div class="form-group row">
+                <div class="col-sm-12">
+                        <input type="password" name="password" class = "form-control" ngModel placeholder="Please Enter Password">
+                </div>
+        </div>
+        <div class="form-group row">
+               
+        <div class="col-sm-6" id="align">
+                <button type="submit" class = "btn btn-primary btn-block">Login</button>
+              </div>
+        </div>
+</form>
+</div>

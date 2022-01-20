@@ -1,0 +1,53 @@
+<app-adminnavbar></app-adminnavbar>
+
+<table class="upFlight bg-light mt-4 " id="users">
+    <tr>
+      <th class = "col-1" *ngFor = "let column of headers">
+        {{column}}
+      </th>
+      <th>Action</th>
+      <th>Action</th>
+      <th>Action</th>
+    </tr>
+  
+    <tr *ngFor = "let row of flightList">
+      <td >
+        {{row.flightNumber}}
+      </td>
+      <td >
+        {{row.airline}}
+      </td>
+      <td >
+        {{row.from}}
+      </td>
+      <td >
+        {{row.to}}
+      </td>
+      <td >
+        {{row.departureDateTime}}
+      </td>
+      <td >
+        {{row.returnDateTime}}
+      </td>
+      <td >
+        {{row.seats}}
+      </td>
+      <td >
+        {{row.ticketCost}}
+      </td>
+      <td >
+        {{row.scheduledDays}}
+      </td>
+      <td >
+        {{row.meals}}
+      </td>
+      <td >
+        {{row.status}}
+      </td>
+      <td><button class="btn btn-primary" (click) ="updateFlight(row)">Update</button></td>
+      <td><button class="btn btn-danger" (click) ="blockFlight(row.flightNumber)">Block</button></td>
+      <td><button class="btn btn-danger" (click) ="unblockFlight(row.flightNumber)">Unblock</button></td>
+      <!-- <td><button class="btn btn-warning" name="blockAirline(value)">Block</button></td> -->
+    </tr>
+  
+  </table>
