@@ -1,0 +1,19 @@
+.color{
+    background-color: #313a46;
+}
+
+#menu{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.container{
+    max-width: 2000px;
+}
+
+.imagelogo{
+    width: 50px;
+    height: auto;
+  }

@@ -1,0 +1,94 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div *ngIf="isSuccessful"> {{responseFlightString}}</div>
+<!-- ADD FLIGHT TABLE -->
+<div class="container">
+	<h2 class="mb-4 mt-2">Welcome Admin</h2>     
+    <div  class="adminForm bg-light mt-4">
+    	<form #flightForm="ngForm"  (ngSubmit)="saveFlight(flightForm)"> 
+	        <div class="row">  
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="airline" class="form-label">Airline Name</label>
+		        <select id='airline' name='airline' [(ngModel)]="airline" class="form-control">
+		            <option *ngFor="let item of airlineList" [value]="item">
+		              {{item}}
+		            </option>    
+		        </select> 
+		      </div>         
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="flightNumber" class="form-label">Flight Number</label>
+		        <input type="text" name="flightNumber" [(ngModel)]="flightNumber" class="form-control">
+		      </div>   
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="from" class="form-label">Source</label>
+		        <select id='from' name='from' [(ngModel)]="from" class="form-control">
+		          <option *ngFor="let item of cityList" [value]="item">
+		            {{item}}
+		          </option>    
+		      </select>
+		      </div>       
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="to" class="form-label">Destination</label>
+		        <select id='to' name='to' [(ngModel)]="to" class="form-control">
+		          <option *ngFor="let item of cityList" [value]="item">
+		            {{item}}
+		          </option>    
+		      </select>
+		      </div> 
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="departureDateTime" class="form-label">Departure Time</label>
+		        <input type="datetime" name="departureDateTime" [(ngModel)]="departureDateTime" onfocus="(this.type='datetime-local')" class="form-control">
+		      </div> 
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="returnDateTime" class="form-label">Arrival Time</label>
+		        <input type="text" name="returnDateTime" [(ngModel)]="returnDateTime" onfocus="(this.type='datetime-local')" class="form-control">
+
+				<!--<input class="datepicker" data-date-format="mm/dd/yyyy"> -->
+		      </div> 
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="seats" class="form-label">Available  Seats</label>
+		        <input type="text" name="seats" [(ngModel)]="seats" value="100" class="form-control">
+		      </div> 
+			  <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="scheduledDays" class="form-label">Scheduled  Days</label>
+		        <input type="text" name="scheduledDays" [(ngModel)]="scheduledDays" value="100" class="form-control">
+		      </div> 
+			  <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="instrumentUsed" class="form-label">Instrument  Used</label>
+		        <input type="text" name="instrumentUsed" [(ngModel)]="instrumentUsed" value="100" class="form-control">
+		      </div> 
+			  <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="toalNoOfRows" class="form-label">No Of Rows</label>
+		        <input type="text" name="toalNoOfRows" [(ngModel)]="toalNoOfRows" value="100" class="form-control">
+		      </div> 
+		      <!-- <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="seat" class="form-label">No of Seats Required</label>
+		        <input type="text" name="seat" [(ngModel)]="seat" class="form-control">
+		      </div> -->
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="cost" class="form-label">Ticket Price</label>
+		        <input type="text" name="cost" [(ngModel)]="cost" class="form-control">
+		      </div>
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="meals" class="form-label">Meal Type</label>
+		        <select id='mealtype' name='meals' [(ngModel)]="meals" class="form-control">
+		          <option *ngFor="let item of mealList" [value]="item">
+		            {{item}}
+		          </option>    
+		      </select>
+		      </div>
+		      <div class="col-sm-4 col-xs-12 form-group">
+		        <label for="status" class="form-label">Status</label>
+		        <select id='status' name='status' [(ngModel)]="status" class="form-control">
+		          <option *ngFor="let item of statusList" [value]="item">
+		            {{item}}
+		          </option>    
+		      </select>
+		      </div> 
+		      <div class="col-sm-12">
+		        <button type="submit" class="btn btn-primary">Submit</button>
+		      </div>  
+			</div>          
+        </form>
+    </div>
+</div>
