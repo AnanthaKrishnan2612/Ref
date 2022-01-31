@@ -1,0 +1,24 @@
+
+
+#align{
+        text-align: center;
+        margin-top: 5%;
+        margin-left: 20%;
+        
+      
+}
+
+
+
+.loginForm{
+    min-height: 200px;
+    display: table;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 30px;
+}
+.loginForm .form-group{
+    margin-bottom: 15px;
+}
